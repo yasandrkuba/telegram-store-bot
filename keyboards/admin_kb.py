@@ -1,8 +1,14 @@
-from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, InlineKeyboardMarkup, \
+    InlineKeyboardButton
 
-button_load = KeyboardButton('➕ Добавить товар')
-button_delete = KeyboardButton('🗑 Удалить')
-button_cancel = KeyboardButton('❌ Отменить добавление')
+add_product = KeyboardButton('➕ Добавить товар')
+cancel_adding = KeyboardButton('❌ Отменить добавление')
+get_catalog = KeyboardButton('Посмотреть каталог')
 
-kb_admin = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button_load).add(button_delete)
-kb_cancel = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button_cancel)
+add_set = KeyboardButton("➕ Добавить сет")
+get_sets = KeyboardButton("Посмотреть сеты")
+
+kb_admin = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).row(add_product, add_set).row(get_catalog, get_sets)
+kb_cancel = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(cancel_adding)
+kb_catalog = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(add_product)
+kb_sets = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(add_set)

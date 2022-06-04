@@ -21,9 +21,3 @@ class TeaSet(Base):
     image = Column(String, nullable=False)
     description = Column(String, nullable=False)
     price = Column(Integer, nullable=False)
-
-# class MediaIds(Base):
-#     __tablename__ = 'Media ids'
-#     id = Column(Integer, primary_key=True)
-#     file_id = Column(String(255))
-#     filename = Column(String(255))
